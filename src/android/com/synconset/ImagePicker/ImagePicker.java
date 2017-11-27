@@ -31,6 +31,11 @@ public class ImagePicker extends CordovaPlugin {
 
     private static final int PERMISSION_REQUEST_CODE = 100;
 
+    private static final String [] permissions = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        };
+
     private CallbackContext callbackContext;
 
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
@@ -46,7 +51,7 @@ public class ImagePicker extends CordovaPlugin {
 
         } else if (ACTION_GET_PICTURES.equals(action)) {
             final JSONObject params = args.getJSONObject(0);
-            final Intent imagePickerIntent = new Intent(cordova.getActivity(), MultiImageChooserActivity.class);
+            final Intent imagePickerIntent = new Intent(cordova.getActivity(), ImgPickerActivity.class);
             int max = 20;
             int desiredWidth = 0;
             int desiredHeight = 0;
@@ -105,7 +110,7 @@ public class ImagePicker extends CordovaPlugin {
     @SuppressLint("InlinedApi")
     private boolean hasReadPermission() {
         return Build.VERSION.SDK_INT < 23 ||
-            PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this.cordova.getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE);
+                (cordova.hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) && cordova.hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE));
     }
 
     @SuppressLint("InlinedApi")
@@ -113,7 +118,7 @@ public class ImagePicker extends CordovaPlugin {
         if (!hasReadPermission()) {
             ActivityCompat.requestPermissions(
                 this.cordova.getActivity(),
-                new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                    permissions,
                 PERMISSION_REQUEST_CODE);
         }
         // This method executes async and we seem to have no known way to receive the result
@@ -126,15 +131,6 @@ public class ImagePicker extends CordovaPlugin {
             ArrayList<String> fileNames = data.getStringArrayListExtra("MULTIPLEFILENAMES");
             JSONArray res = new JSONArray(fileNames);
             callbackContext.success(res);
-
-        } else if (resultCode == Activity.RESULT_CANCELED && data != null) {
-            String error = data.getStringExtra("ERRORMESSAGE");
-            callbackContext.error(error);
-
-        } else if (resultCode == Activity.RESULT_CANCELED) {
-            JSONArray res = new JSONArray();
-            callbackContext.success(res);
-
         } else {
             callbackContext.error("No images selected");
         }
