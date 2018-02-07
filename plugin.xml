@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  id="cordova-plugin-matisse-imagepicker"
-  version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        id="cordova-plugin-matisse-imagepicker"
+        version="1.0.1">
 
     <name>matisse-imagepicker</name>
 
@@ -109,15 +110,9 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
-        <framework src="com.android.support:support-v4:26.+" />
         <framework src="com.android.support:appcompat-v7:26.+" />
-        <framework src="com.android.support:support-annotations:26.+" />
-        <framework src="com.android.support:recyclerview-v7:26.+" />
-        <framework src="it.sephiroth.android.library.imagezoom:library:1.0.4"/>
-        <framework src="com.github.bumptech.glide:glide:3.7.0" />
-        <framework src="com.zhihu.android:matisse:0.5.0-beta2" />
         <framework src="src/android/ignorelinterrors.gradle" custom="true" type="gradleReference"/>
-        <framework src="src/android/androidtarget.gradle" custom="true" type="gradleReference"/>
+        <framework src="src/android/imagePicker.gradle" custom="true" type="gradleReference"/>
 
         <source-file src="src/android/com/synconset/ImagePicker/ImagePicker.java" target-dir="src/com/synconset" />
         <source-file src="src/android/com/synconset/ImagePicker/ImgPickerActivity.java" target-dir="src/com/synconset" />
