@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:rim="http://www.blackberry.com/ns/widgets"
         id="cordova-plugin-matisse-imagepicker"
-        version="1.0.1">
+        version="1.0.2">
 
     <name>matisse-imagepicker</name>
 
@@ -110,7 +110,6 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
-        <framework src="com.android.support:appcompat-v7:26.+" />
         <framework src="src/android/ignorelinterrors.gradle" custom="true" type="gradleReference"/>
         <framework src="src/android/imagePicker.gradle" custom="true" type="gradleReference"/>
 
