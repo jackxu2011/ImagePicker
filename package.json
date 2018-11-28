@@ -1,20 +1,33 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "cordova-plugin-matisse-imagepicker",
-  "cordova_name": "ImagePicker",
   "description": "This plugin allows selection of multiple images from the camera roll / gallery in a phonegap app",
+  "author": "",
   "license": "MIT",
-  "repo": "https://github.com/jackxu2011/ImagePicker.git",
-  "issue": "",
-  "keywords": [],
-  "platforms": [
-    "android",
-    "ios"
+  "keywords": [
+    "cordova",
+    "cordova-ios",
+    "cordova-android",
+    "imagepicker"
   ],
   "engines": [
-    {
-      "name": "cordova",
-      "version": ">=5.0.0"
+    "1.0.0": {
+      "cordova": ">=5.0.0"
     }
   ]
+  "cordova": {
+    "id": "cordova-plugin-matisse-imagepicker",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackxu2011/cordova-plugin-matisse-imagepicker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jackxu2011/cordova-plugin-matisse-imagepicker/issues"
+  },
+  "homepage": "https://github.com/jackxu2011/cordova-plugin-matisse-imagepicker#readme"
 }

@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:rim="http://www.blackberry.com/ns/widgets"
         id="cordova-plugin-matisse-imagepicker"
-        version="1.0.4">
+        version="1.0.5">
 
     <name>matisse-imagepicker</name>
 
@@ -28,8 +28,8 @@
                 <param name="ios-package" value="SOSPicker"/>
             </feature>
         </config-file>
-        
-        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION" default=" " />
+
+        <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION"/>
         <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
           <string>$PHOTO_LIBRARY_USAGE_DESCRIPTION</string>
         </config-file>
@@ -80,8 +80,9 @@
         <resource-file src="src/ios/GMImagePicker/fr.lproj" />
         <resource-file src="src/ios/GMImagePicker/it.lproj" />
         <resource-file src="src/ios/GMImagePicker/pt.lproj" />
+        <resource-file src="src/ios/GMImagePicker/pl.lproj" />
         <resource-file src="src/ios/GMImagePicker/zh-Hans.lproj" />
-        
+
         <framework src="Accelerate.framework" />
         <framework src="Security.framework" />
         <framework src="Photos.framework" />
