@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:rim="http://www.blackberry.com/ns/widgets"
         id="cordova-plugin-matisse-imagepicker"
-        version="1.0.5">
+        version="1.0.6">
 
     <name>matisse-imagepicker</name>
 
