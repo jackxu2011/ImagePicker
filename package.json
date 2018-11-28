@@ -10,11 +10,13 @@
     "cordova-android",
     "imagepicker"
   ],
-  "engines": [
-    "1.0.0": {
-      "cordova": ">=5.0.0"
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">=5.0.0"
+      }
     }
-  ]
+  },
   "cordova": {
     "id": "cordova-plugin-matisse-imagepicker",
     "platforms": [
