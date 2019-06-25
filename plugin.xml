@@ -6,7 +6,7 @@
         version="1.0.7">
 
     <name>matisse-imagepicker</name>
-    
+
     <description>
         This plugin allows selection of multiple images from the camera roll / gallery in a phonegap app
     </description>
@@ -116,6 +116,7 @@
 
         <source-file src="src/android/com/synconset/ImagePicker/ImagePicker.java" target-dir="src/com/synconset" />
         <source-file src="src/android/com/synconset/ImagePicker/ImgPickerActivity.java" target-dir="src/com/synconset" />
+        <source-file src="src/android/com/synconset/ImagePicker/ResultIPC.java" target-dir="src/com/synconset" />
 
     </platform>
 </plugin>
